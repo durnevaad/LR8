@@ -1,0 +1,62 @@
+﻿<title>Дурнева А.Д.</title>
+<br><b>Упражнение №1</b><br>
+<body>
+<div class="wrapper">
+<!-- Выдвижная панель -->
+<div id="panel">
+Выдвижная панель
+</div>
+<button class="btn-slide">Нажми!</button>
+</div>
+<br><b>Упражнение №2</b><br>
+<!-- Удаление -->
+<div class="pane">
+<span class="delete">X</span>
+<p>jQuery – библиотека Javascript, фокусирующаяся на взаимодействии Javascript и HTML. </p>
+</div>
+<br><b>Упражнение №3</b><br>
+<!-- Управление элементом на странице -->
+<button class="run">Начать движение</button>
+<div class="control_block_container">
+<div id="box">Управляемый блок</div>
+<br><b>Упражнение №4</b><br>
+<!-- Аккордеон -->
+<div class="accordion">
+<h3>Первый заголовок</h3>
+<p><b>Первый блок</b></br>jQuery – библиотека Javascript, фокусирующаяся на взаимодействии Javascript и HTML. </p>
+<h3>Второй заголовок</h3>
+<p><b>Второй блок</b></br>jQuery – библиотека Javascript, фокусирующаяся на взаимодействии Javascript и HTML. </p>
+<h3>Третий заголовок</h3>
+<p><b>Третий блок</b></br>jQuery – библиотека Javascript, фокусирующаяся на взаимодействии Javascript и HTML. </p>
+</div>
+</body>
+<script type="text/javascript" src="jquery-3.6.0.min.js" ></script>
+<script type="text/javascript" >
+$(document).ready(function(){ //Выдвижная панель
+$(".btn-slide").click(function(){
+$("#panel").slideToggle("slow");
+$(this).toggleClass("active");
+});
+});
+$(".delete").click(function(){ //Удаление
+$(this).parents(".pane").animate({opacity:"hide"}, "slow");
+});
+$(".run").click(function(){ //Управление элементом
+$("#box").animate ({opacity: "0.1", left:"+=400"},1200)
+.animate({opacity: "0.4", top: "+=160", height: "40", width: "40"}, "slolw")
+.animate({opacity: "1", left: "0", height: "50", width: "100"}, "slolw")
+.animate({top:"0"}, "fast")
+.slideUp()
+.slideDown("slow")
+return false;
+});
+$(".accordion h3:first").addClass("active"); //аккордеон
+$(".accordion p:not(:first)").hide();
+$(".accordion h3").click (function(){
+$(this).next ("p").slideToggle("slow")
+.siblings("p:visible").slideUp("slow");
+$(this).toggleClas("active");
+$(this).siblings("h3").removeClass("active");
+});
+</script>
+<p><a href="navigati.php">Вернуться назад</a></p>
