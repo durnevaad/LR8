@@ -1,0 +1,35 @@
+﻿<title>Дурнева А.Д.</title>
+<b>Задание №6</b><br>
+<html> <head>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+var m=[0,0,0,0,0,0,0,0]; var sum=0;
+function ch(rad){
+sum+=1; m[rad]++;
+var summ = [
+"<br> 1-й вопрос: "+ m[0]/sum*100+"%",
+"<br> 2-й вопрос: "+ m[1]/sum*100+"%",
+"<br> 3-й вопрос: "+ m[2]/sum*100+"%",
+"<br> 4-й вопрос: "+ m[3]/sum*100+"%",
+"<br> 5-й вопрос: "+ m[4]/sum*100+"%",
+"<br> 6-й вопрос: "+ m[5]/sum*100+"%",
+"<br> 7-й вопрос: "+ m[6]/sum*100+"%",
+"<br> 8-й вопрос: "+ m[7]/sum*100+"%",
+]
+console.log(summ)
+document.getElementById('result').innerHTML = summ;}
+</script>
+<h2>Какие проблемы вы испытываете при дистанционном обучении?</h2>
+<form>
+<p>Выберите вариант ответа</p>
+<p><input type="radio" name="gav" value="0" id="podschet0" onclick="ch(0);"/><label for='podschet0'> 1. У меня нет доступа к инструментам или информации, необходимой для учебы</label></p>
+<p><input type="radio" name="gav" value="0" id="podschet1" onclick="ch(1);"/><label for='podschet1'> 2. Отсутствие физического рабочего пространства</label></p>
+<p><input type="radio" name="gav" value="0" id="podschet2" onclick="ch(2);"/><label for='podschet2'> 3. Подключение к Интернету</label></p>
+<p><input type="radio" name="gav" value="0" id="podschet3" onclick="ch(3);"/><label for='podschet3'> 4. Слишком много отвлекающих факторов дома</label></p>
+<p><input type="radio" name="gav" value="0" id="podschet4" onclick="ch(4);"/><label for='podschet4'> 5. Соблюдение расписания</label></p>
+<p><input type="radio" name="gav" value="0" id="podschet5" onclick="ch(5);"/><label for='podschet5'> 6. Общая тревога по поводу влияния пандемии на мою жизнь</label></p>
+<p><input type="radio" name="gav" value="0" id="podschet6" onclick="ch(6);"/><label for='podschet6'> 7. Общаться с преподавателями стало сложнее</label><br/></p>
+<p><input type="radio" name="gav" value="0" id="podschet7" onclick="ch(7);"/><label for='podschet7'> 8. Все и сразу</label><br/></p>
+<p>Как ответили другие?<span id="result"></span>
+</form> </head> </html>
+<p><a href="navigat.php">Вернуться назад</a></p>
