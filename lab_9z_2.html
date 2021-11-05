@@ -1,14 +1,44 @@
 ﻿<title>Дурнева А.Д.</title>
-<br><b>Задание №2</b><br>
-
-<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('#fon').click(function(){
-		$(this).css('background', `hsl(${Math.floor(Math.random() * 100)},100%,50%)`);
-	}) });
-</script> </head>
-<body id="fon">
-<input type="button" value="Поменять цвет" id="background_change">
-</body> </html>
+<b>Задание №2</b><br><br>
+<html> <body>
+	<script src="jquery-validation-1.15.1/lib/jquery.js"></script>
+	<script src="jquery-validation-1.15.1/dist/jquery.validate.js"></script>
+	<script type="text/javascript">
+$(document).ready(function proverka(){
+    $('f').validate({
+            rules: {
+				firstname: 'required',
+				password: {required: true,
+					minlength: 4,},
+				confirm_password: {required: true,
+					minlength: 4,
+					equalTo: "#password",},
+				email: {required: true,
+					email: true,},
+				msg: {required: true,
+					minlength: 10,},},
+			messages: {firstname: "Введите свое имя",
+				password: {required: "Введите пароль",
+					minlength: "Пароль должен быть не менее 4 символов",},
+				confirm_password: {required: "Введите пароль",
+					minlength: "Пароль должен быть не менее 4 символов",
+					equalTo: "Пароль неккоректный",},
+				email: "Введите свой Email",
+				msg: {required: "Введите сообщение",
+					minlength: "Сообщение должно быть не быть не менее 10 символов",},}
+		});});
+</script>
+<form name="f" onsubmit="return proverka()">
+Ваше имя*<input type="gav" name="gav" size=15 required> <br/><br>
+Пароль*<input id="pass" name="gav" minlength = "4" size=10 required> <br><br>
+Потверждение пароля*<input id="passw" name="gav" minlength = "4" size=10 required> <br/><br>
+Email*<input id="email" name="gav" type="email" required><br><br>
+Тема сообщения*<input name="gav" size=15 required><br><br>
+Сообщение:<br><textarea minlength = "10" required></textarea> <br><br>
+<input type="submit" value="Отправить">
+<input type="reset" value="Очистить">
+<style>
+        input[name=gav]:invalid{
+           border: solid 1px red;}
+</style> </form> </body> </html>
 <p><a href="navigati.php">Вернуться назад</a></p>
