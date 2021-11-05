@@ -1,0 +1,23 @@
+﻿<title>Дурнева А.Д.</title>
+<b>Задание №5</b><br>
+<html> <body>
+<img id="s" style="position:absolute;" src="snail.jpg"/>
+</body> <head>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  s.onmousedown = function(sn) {
+  moveAt(sn.pageX, sn.pageY);
+  function moveAt(pageX, pageY) {
+   s.style.left = pageX - s.offsetWidth / 2 + 'px';
+   s.style.top = pageY - s.offsetHeight / 2 + 'px';}
+  function onMouseMove(sn) { moveAt(sn.pageX, sn.pageY);}
+  document.addEventListener('mousemove', onMouseMove);
+   s.onmouseup = function() {
+   document.removeEventListener('mousemove', onMouseMove);
+   s.onmouseup = null;};
+   s.ondragstart = function() {
+   return false;};
+};});
+</script> </head> </html>
+<p><a href="navigat.php">Вернуться назад</a></p>
