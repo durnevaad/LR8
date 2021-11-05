@@ -1,0 +1,34 @@
+﻿<title>Дурнева А.Д.</title>
+<b>Задание №3</b><br>
+<html>
+<body>
+<img id="s" style="position:absolute;" src="snail.jpg">
+</body> <head>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function sna(){
+var x=0, y=0;
+	document.onkeydown = function(sn) {
+    var W=window.innerWidth, H=window.innerHeight;
+   if (sn.keyCode == 37) {
+    x -=100;
+	if(x<0){
+	x=0;}}
+   if (sn.keyCode == 38) {
+    y-=100;
+	if(y<0){
+	y=0;}}
+   if (sn.keyCode == 39) {
+    x +=100;
+	if(x>W-500){
+	x=W-500;}}
+   if (sn.keyCode == 40) {
+    y +=100;
+	if(y>H-500){
+	y=H-500;}}
+$('#s').animate({
+left: String(x)+"px",
+top: String(y)+"px",
+});}});
+</script> </head> </html>
+<p><a href="navigat.php">Вернуться назад</a></p>
